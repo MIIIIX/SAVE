@@ -221,6 +221,10 @@ async def clone(bot, event):
     
     if 't.me' in link and not 't.me/c/' in link and not 't.me/+' in link:
         try:
+            Fuck.append(f'{event.sender_id}')
+        except:
+            pass
+        try:
             await get_msg(bot, bot, event.chat.id, link, edit)
         except FloodWait as e:
             await asyncio.sleep(e.value)
