@@ -111,7 +111,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                 except:
                     pass
                 try:
-                    Fuck.remove(Fuck)
+                    Fuck.remove(f'{sender}')
                 except:
                     pass
             elif str(file).split(".")[-1] in ['jpg', 'jpeg', 'png', 'webp']:
@@ -124,7 +124,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                 except:
                     pass
                 try:
-                    Fuck.remove(Fuck)
+                    Fuck.remove(f'{sender}')
                 except:
                     pass
                 #for audio
@@ -138,7 +138,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                 except:
                     pass
                 try:
-                    Fuck.remove(Fuck)
+                    Fuck.remove(f'{sender}')
                 except:
                     pass
             else:
@@ -161,7 +161,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
             except:
                 pass
             try:
-                Fuck.remove(Fuck)
+                Fuck.remove(f'{sender}')
             except:
                 pass
         except Exception as e:
@@ -221,7 +221,7 @@ async def clone(bot, event):
     
     if 't.me' in link and not 't.me/c/' in link and not 't.me/+' in link:
         try:
-            Fuck.append(f'{event.sender_id}')
+            Fuck.append(f'{sender}')
         except:
             pass
         try:
@@ -262,7 +262,7 @@ async def clone(bot, event):
         return 
     if 't.me' in link:
         try:
-            Fuck.append(f'{event.sender_id}')
+            Fuck.append(f'{sender}')
         except:
             pass
         try:
