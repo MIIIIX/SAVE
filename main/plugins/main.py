@@ -22,10 +22,9 @@ import re, time, asyncio, logging
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
-
+Fuck = []
 process=[]
 timer=[]
-
 async def check_user(id):
     ok = True
     try:
@@ -111,6 +110,10 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                     os.remove(file)
                 except:
                     pass
+                try:
+                    Fuck.pop(0)
+                except:
+                    pass
             elif str(file).split(".")[-1] in ['jpg', 'jpeg', 'png', 'webp']:
                 await edit.edit("Uploading image file...")
                 await bot.send_file(sender, file, caption=caption)
@@ -120,16 +123,22 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                     os.remove(file)
                 except:
                     pass
+                try:
+                    Fuck.pop(0)
+                except:
+                    pass
                 #for audio
             elif str(file).split(".")[-1] in ['mp3', 'ogg', 'wav', 'm4a', 'Flac', 'AAC']:
-                
-                
                 await edit.edit("🎵 Uploading Audio File...")
                 await client.send_audio(sender, file, caption=caption)
                 await edit.delete() 
                 await set_timer(client, sender, process, timer)
                 try:
                     os.remove(file)
+                except:
+                    pass
+                try:
+                    Fuck.pop(0)
                 except:
                     pass
             else:
@@ -149,6 +158,10 @@ async def get_msg(userbot, client, sender, msg_link, edit):
             await set_timer(client, sender, process, timer) 
             try:
                 os.remove(file)
+            except:
+                pass
+            try:
+                Fuck.pop(0)
             except:
                 pass
         except Exception as e:
