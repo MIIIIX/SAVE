@@ -1,1 +1,2 @@
-Drone: python3 -m main
+worker: python3 -m main
+web: python -m http.server $PORT
