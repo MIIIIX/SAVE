@@ -220,12 +220,15 @@ async def clone(bot, event):
     edit = await Bot.send_message(event.chat.id, "⏳")
     
     if 't.me' in link and not 't.me/c/' in link and not 't.me/+' in link:
+        if f'{event.sender_id}' in Fuck:
+            return await edit.edit("⚠️ One process is already going on, wait until it completes.")
         try:
             Fuck.append(f'{sender}')
-        except:
-            pass
-        try:
             await get_msg(bot, bot, event.chat.id, link, edit)
+            try:
+                Fuck.remove(f'{sender}')
+            except:
+                pass
         except FloodWait as e:
             await asyncio.sleep(e.value)
         except ValueError as v:
@@ -261,11 +264,15 @@ async def clone(bot, event):
         await edit.edit(xy)
         return 
     if 't.me' in link:
+        if f'{event.sender_id}' in Fuck:
+            return await edit.edit("⚠️ One process is already going on, wait until it completes.")
         try:
             Fuck.append(f'{sender}')
-        except:
-            pass
-        try:
+            await get_msg(bot, bot, event.chat.id, link, edit)
+            try:
+                Fuck.remove(f'{sender}')
+            except:
+                pass
             await get_msg(userbot, bot, event.chat.id, link, edit)
         except BadRequest.CHANNEL_INVALID:
             return await edit.edit('Join the channel first.')
