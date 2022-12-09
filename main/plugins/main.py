@@ -111,7 +111,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                 except:
                     pass
                 try:
-                    Fuck.pop(0)
+                    Fuck.remove(Fuck)
                 except:
                     pass
             elif str(file).split(".")[-1] in ['jpg', 'jpeg', 'png', 'webp']:
@@ -124,7 +124,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                 except:
                     pass
                 try:
-                    Fuck.pop(0)
+                    Fuck.remove(Fuck)
                 except:
                     pass
                 #for audio
@@ -138,7 +138,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                 except:
                     pass
                 try:
-                    Fuck.pop(0)
+                    Fuck.remove(Fuck)
                 except:
                     pass
             else:
@@ -161,7 +161,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
             except:
                 pass
             try:
-                Fuck.pop(0)
+                Fuck.remove(Fuck)
             except:
                 pass
         except Exception as e:
