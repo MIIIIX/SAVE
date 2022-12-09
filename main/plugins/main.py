@@ -4,18 +4,12 @@ from pyrogram.enums import MessageMediaType
 from pyromod import listen
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 #end
-from .. import bot
+from .. import bot, API_ID, API_HASH, BOT_TOKEN, FORCESUB, ACCESS
 import os
 from main.plugins.helpers import get_link, forcesub, forcesub_text, join, set_timer, check_timer, screenshot
 from main.plugins.display_progress import progress_for_pyrogram
 from main.Database.database import Database
-from decouple import config
-from telethon import Button
-API_ID = config("API_ID", default=None, cast=int)
-API_HASH = config("API_HASH", default=None)
-BOT_TOKEN = config("BOT_TOKEN", default=None)
-FORCESUB = config("FORCESUB", default=None) 
-ACCESS = config("ACCESS", default=None, cast=int)
+from decouple import config 
 from telethon import events, Button
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.errors.rpcerrorlist import UserNotParticipantError
