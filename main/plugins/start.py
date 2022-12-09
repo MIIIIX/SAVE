@@ -81,7 +81,13 @@ async def start(event):
                         [Button.inline("💲 Donate", data="cbdonate"),
                          Button.inline("🗑️ Close", data="cbclose")]
                     ])
-        os.system(f"kill -9 {os.getpid()} && bash start")
+        try:
+            await Bot.disconnect()
+            await bot.disconnect()
+        except Exception:
+            pass
+        os.execl(sys.executable, sys.executable, *sys.argv)
+        quit()
     else:
         await Dick.edit(f'👋 Hi **{event.sender.first_name}**,\n\nI am Save Restricted Contents Bot, I can save files of restricted channels as well as group.\n\n__Hit /help to learn more.__', 
                       buttons=[
