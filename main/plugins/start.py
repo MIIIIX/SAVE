@@ -306,7 +306,7 @@ async def lin(event):
         await login(event.sender_id, i, h, s) 
         try:
             me = await client.get_me()
-            await conv.send_message(f"✅ Welcome {me.first_name},\nYou are Successfully logged in.\n\n🔗 Now send me your message link to download.")
+            await conv.send_message(f"✅ Welcome {me.first_name},\nYou are Successfully logged in.\n\n🔗 Now send me your message link to save.")
         except Exception as e:
             await conv.send_message(f"Error: `{str(e)}`.") 
         await client.disconnect()
@@ -589,7 +589,7 @@ async def lin(event):
         try:
             async with Client(name="saverestricted", session_string=s, api_hash=h, api_id=int(i)) as X:
               k = await X.get_me()
-              await conv.send_message(f"✅ Welcome {k.first_name}, You are Successfully logged in.\n\n🔗 Now send me your message link to download.")
+              await conv.send_message(f"✅ Welcome {k.first_name}, You are Successfully logged in.\n\n🔗 Now send me your message link to save.")
               await login(event.sender_id, i, h, s) 
               await db.loin(int(event.sender_id))
         except Exception as e:
