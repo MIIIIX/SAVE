@@ -152,7 +152,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
             except:
                 pass
         except Exception as e:
-            await edit.edit(F'Send message link of joined channel only.')
+            await edit.edit(F'Send message link of joined channel only.\nError:{str(e)}')
             return 
     else:
         #st, r = check_timer(sender, process, timer) 
