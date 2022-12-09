@@ -411,8 +411,14 @@ async def restart(event):
         await event.reply("Rebooting... It will take upto 30 seconds.")
         HU_APP.restart()
     else:
-        await event.reply("Rebooting... It will take upto 10 seconds.")
-        os.system(f"kill -9 {os.getpid()} && bash start")
+        try:
+            await event.reply("Rebooting...")
+            await Bot.disconnect()
+            await bot.disconnect()
+        except Exception:
+            pass
+        os.execl(sys.executable, sys.executable, *sys.argv)
+        quit()
 #end  
 @bot.on(events.NewMessage(pattern="^/ping$", func=lambda e: e.is_private))
 async def ping(event):
