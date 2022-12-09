@@ -258,6 +258,10 @@ async def clone(bot, event):
         return 
     if 't.me' in link:
         try:
+            Fuck.append(f'{event.sender_id}')
+        except:
+            pass
+        try:
             await get_msg(userbot, bot, event.chat.id, link, edit)
         except BadRequest.CHANNEL_INVALID:
             return await edit.edit('Join the channel first.')
