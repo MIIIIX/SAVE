@@ -383,7 +383,7 @@ async def help(event):
 @bot.on(events.NewMessage(pattern="^/bulk$", func=lambda e: e.is_private))
 async def search(event):
      user = await event.get_sender()
-     await event.reply("**Available Offers**\n\n1.For 1 day 👉 1 dollars Per day\n\n2.For 1 week 👉 4 dollars\n\n3.For 20 days 👉 10 dollars\n\n**YOU CAN GET HUGE DISCOUNT BY CONTACTING ME USING BELOW BUTTON**\n\n__If you want to subscribe premium feature please contact me using below button.__", buttons=[Button.url("Contact", url="https://telegram.me/pyroowner")])
+     await event.reply("**Available Offers**\n\n1.For 1 day 👉 $3\n\n2.1 week 👉 $7\n\n3.1 months 👉 $12\n\n**Payment Mode:- Paypal, UPI, BTC, Amazon Gift Card**\n\n__If you want to subscribe premium feature please contact me using below button.__", buttons=[Button.url("Contact", url="https://telegram.me/pyroowner")])
 #end bulk Message
 #server
 @bot.on(events.NewMessage(pattern="^/server$", func=lambda e: e.is_private))
