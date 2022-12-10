@@ -5,7 +5,7 @@ from pyromod import listen
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 #end
 from .. import bot, API_ID, API_HASH, BOT_TOKEN, FORCESUB, ACCESS
-import os
+import os, sys
 from main.plugins.helpers import get_link, forcesub, forcesub_text, join, set_timer, check_timer, screenshot
 from main.plugins.display_progress import progress_for_pyrogram
 from main.Database.database import Database
