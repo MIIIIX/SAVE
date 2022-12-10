@@ -441,8 +441,6 @@ async def clone(event):
 
 
 
-# Start Clients
-#Bot.start()
 #run above client 
 try:
     Bot.run()
