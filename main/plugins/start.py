@@ -433,7 +433,15 @@ async def ping(event):
     end_t = time.time()
     time_taken_s = (end_t - start_t) * 1000
     await dick.edit(f"Pong!\n{time_taken_s:.3f} ms")
-
+    try:
+        await Bot.start()
+        await userbot.start()
+        await idle()
+    except Exception as e:
+        if 'Client is already connected' in str(e):
+            pass
+        else:
+            return
 @bot.on(events.NewMessage(from_users=AUTH_USERS, pattern="^/cleanup$"))
 async def clear_downloads(event):
     ls_dir = os.listdir(downloads)
