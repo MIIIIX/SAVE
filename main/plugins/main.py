@@ -438,11 +438,9 @@ async def clone(event):
             await asyncio.sleep(5)
 
 
-
-
-
 #run above client 
 try:
-    Bot.run()
-except:
-    pass
+    Bot.start()
+except Exception as e:
+    print(e)
+    sys.exit(1)
