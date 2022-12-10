@@ -438,7 +438,7 @@ async def clone(event):
             await asyncio.sleep(5)
 
 
-#run above client 
+#start above client 
 try:
     Bot.start()
 except Exception as e:
