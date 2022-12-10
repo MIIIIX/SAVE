@@ -219,7 +219,7 @@ async def clone(bot, event):
 
     edit = await Bot.send_message(event.chat.id, "⏳")
     if 't.me' in link and not 't.me/c/' in link and not 't.me/+' in link:
-        if f'{event.sender_id}' in Fuck:
+        if f'{sender}' in Fuck:
             return await edit.edit("⚠️ One process is already going on, wait until it completes.")
         try:
             Fuck.append(f'{sender}')
@@ -262,7 +262,7 @@ async def clone(bot, event):
         await edit.edit(xy)
         return 
     if 't.me' in link:
-        if f'{event.sender_id}' in Fuck:
+        if f'{sender}' in Fuck:
             return await edit.edit("⚠️ One process is already going on, wait until it completes.")
         try:
             Fuck.append(f'{sender}')
