@@ -22,7 +22,7 @@ import re, time, asyncio, logging
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
-Fuck = []
+#Fuck = []
 process=[]
 timer=[]
 async def check_user(id):
@@ -110,10 +110,10 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                     os.remove(file)
                 except:
                     pass
-                try:
-                    Fuck.remove(f'{sender}')
-                except:
-                    pass
+               # try:
+               #     Fuck.remove(f'{sender}')
+               # except:
+              #      pass
             elif str(file).split(".")[-1] in ['jpg', 'jpeg', 'png', 'webp']:
                 await edit.edit("Uploading image file...")
                 await bot.send_file(sender, file, caption=caption)
@@ -123,10 +123,10 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                     os.remove(file)
                 except:
                     pass
-                try:
-                    Fuck.remove(f'{sender}')
-                except:
-                    pass
+             #   try:
+                #    Fuck.remove(f'{sender}')
+              #  except:
+                #    pass
                 #for audio
             elif str(file).split(".")[-1] in ['mp3', 'ogg', 'wav', 'm4a', 'Flac', 'AAC']:
                 await edit.edit("🎵 Uploading Audio File...")
@@ -137,10 +137,10 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                     os.remove(file)
                 except:
                     pass
-                try:
-                    Fuck.remove(f'{sender}')
-                except:
-                    pass
+             #   try:
+               #     Fuck.remove(f'{sender}')
+               # except:
+             #       pass
             else:
                 await client.send_document(
                     sender,
@@ -160,10 +160,10 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                 os.remove(file)
             except:
                 pass
-            try:
-                Fuck.remove(f'{sender}')
-            except:
-                pass
+          #  try:
+             #   Fuck.remove(f'{sender}')
+           # except:
+           #     pass
         except Exception as e:
             await edit.edit(F'Send message link of joined channel only.\nError:{str(e)}')
             return 
@@ -219,15 +219,15 @@ async def clone(bot, event):
 
     edit = await Bot.send_message(event.chat.id, "⏳")
     if 't.me' in link and not 't.me/c/' in link and not 't.me/+' in link:
-        if f'{event.chat.id}' in Fuck:
-            return await edit.edit("⚠️ One process is already going on, wait until it completes.")
+      #  if f'{event.chat.id}' in Fuck:
+           # return await edit.edit("⚠️ One process is already going on, wait until it completes.")
         try:
-            Fuck.append(f'{event.chat.id}')
+            #Fuck.append(f'{event.chat.id}')
             await get_msg(bot, bot, event.chat.id, link, edit)
-            try:
-                Fuck.remove(f'{event.chat.id}')
-            except:
-                pass
+          #  try:
+              #  Fuck.remove(f'{event.chat.id}')
+        #    except:
+           #     pass
         except FloodWait as e:
             await asyncio.sleep(e.value)
         except ValueError as v:
@@ -262,16 +262,16 @@ async def clone(bot, event):
         await edit.edit(xy)
         return 
     if 't.me' in link:
-        if f'{event.chat.id}' in Fuck:
-            return await edit.edit("⚠️ One process is already going on, wait until it completes.")
+      #  if f'{event.chat.id}' in Fuck:
+      #      return await edit.edit("⚠️ One process is already going on, wait until it completes.")
         try:
-            Fuck.append(f'{event.chat.id}')
+          #  Fuck.append(f'{event.chat.id}')
             await get_msg(bot, bot, event.chat.id, link, edit)
-            try:
-                Fuck.remove(f'{event.chat.id}')
-            except:
-                pass
-            await get_msg(userbot, bot, event.chat.id, link, edit)
+           # try:
+            #    Fuck.remove(f'{event.chat.id}')
+          #  except:
+              #  pass
+           # await get_msg(userbot, bot, event.chat.id, link, edit)
         except BadRequest.CHANNEL_INVALID:
             return await edit.edit('Join the channel first.')
             await asyncio.sleep(2)
