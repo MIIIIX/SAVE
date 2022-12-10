@@ -218,8 +218,6 @@ async def clone(bot, event):
         return
 
     edit = await Bot.send_message(event.chat.id, "⏳")
-    
-"""
     if 't.me' in link and not 't.me/c/' in link and not 't.me/+' in link:
         if f'{event.sender_id}' in Fuck:
             return await edit.edit("⚠️ One process is already going on, wait until it completes.")
@@ -240,7 +238,6 @@ async def clone(bot, event):
             await asyncio.sleep(2)      
         except FloodWait as e:
             return await edit.edit(f"Bot is limited by telegram for {e.value + 2} seconds.\nPlease wait until then or use @saverestrictedcontentsbot if working.")
-"""
     userbot = ""
     MONGODB_URI = config("MONGODB_URI", default=None)
     db = Database(MONGODB_URI, 'saverestricted')
