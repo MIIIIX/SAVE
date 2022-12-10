@@ -219,13 +219,13 @@ async def clone(bot, event):
 
     edit = await Bot.send_message(event.chat.id, "⏳")
     if 't.me' in link and not 't.me/c/' in link and not 't.me/+' in link:
-        if f'{sender}' in Fuck:
+        if f'{event.chat.id}' in Fuck:
             return await edit.edit("⚠️ One process is already going on, wait until it completes.")
         try:
-            Fuck.append(f'{sender}')
+            Fuck.append(f'{event.chat.id}')
             await get_msg(bot, bot, event.chat.id, link, edit)
             try:
-                Fuck.remove(f'{sender}')
+                Fuck.remove(f'{event.chat.id}')
             except:
                 pass
         except FloodWait as e:
@@ -262,13 +262,13 @@ async def clone(bot, event):
         await edit.edit(xy)
         return 
     if 't.me' in link:
-        if f'{sender}' in Fuck:
+        if f'{event.chat.id}' in Fuck:
             return await edit.edit("⚠️ One process is already going on, wait until it completes.")
         try:
-            Fuck.append(f'{sender}')
+            Fuck.append(f'{event.chat.id}')
             await get_msg(bot, bot, event.chat.id, link, edit)
             try:
-                Fuck.remove(f'{sender}')
+                Fuck.remove(f'{event.chat.id}')
             except:
                 pass
             await get_msg(userbot, bot, event.chat.id, link, edit)
