@@ -218,26 +218,26 @@ async def clone(bot, event):
         return
 
     edit = await Bot.send_message(event.chat.id, "⏳")
-    if 't.me' in link and not 't.me/c/' in link and not 't.me/+' in link:
+  #  if 't.me' in link and not 't.me/c/' in link and not 't.me/+' in link:
       #  if f'{event.chat.id}' in Fuck:
            # return await edit.edit("⚠️ One process is already going on, wait until it completes.")
-        try:
+    #    try:
             #Fuck.append(f'{event.chat.id}')
-            await get_msg(bot, bot, event.chat.id, link, edit)
+           # await get_msg(bot, bot, event.chat.id, link, edit)
           #  try:
               #  Fuck.remove(f'{event.chat.id}')
         #    except:
            #     pass
-        except FloodWait as e:
-            await asyncio.sleep(e.value)
-        except ValueError as v:
-            return await edit.edit(f'`{str(v)}` Only message link allowed.\nMay be your message contains `?single` remove this word from your link and try again')
-            await asyncio.sleep(2)
-        except Exception as e:
-            return await edit.edit(f'Please join the channel first.')   
-            await asyncio.sleep(2)      
-        except FloodWait as e:
-            return await edit.edit(f"Bot is limited by telegram for {e.value + 2} seconds.\nPlease wait until then or use @saverestrictedcontentsbot if working.")
+       # except FloodWait as e:
+     #       await asyncio.sleep(e.value)
+      #  except ValueError as v:
+       #     return await edit.edit(f'`{str(v)}` Only message link allowed.\nMay be your message contains `?single` remove this word from your link and try again')
+   #         await asyncio.sleep(2)
+       # except Exception as e:
+        #    return await edit.edit(f'Please join the channel first.')   
+     #       await asyncio.sleep(2)      
+      #  except FloodWait as e:
+           # return await edit.edit(f"Bot is limited by telegram for {e.value + 2} seconds.\nPlease wait until then or use @saverestrictedcontentsbot if working.")
     userbot = ""
     MONGODB_URI = config("MONGODB_URI", default=None)
     db = Database(MONGODB_URI, 'saverestricted')
