@@ -725,8 +725,8 @@ async def log_msg(event):
 #emd
 
 #logs
-try:
-    Bot.run()
-except:
-    pass
+#try:
+ #   Bot.run()
+#except:
+ #   pass
 
