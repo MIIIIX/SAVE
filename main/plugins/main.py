@@ -65,7 +65,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                     await client.send_message(sender, msg.text.markdown)
                     await edit.delete()
                     return
-                if msg.media in [MessageMediaType.SERVICE, MessageMediaType.EMPTY, MessageMediaType.DICE, MessageMediaType.LOCATION]:
+                if msg.empty or msg.service or msg.dice or msg.location:
                     edit = await client.edit_message_text(sender, edit_id, "This message doesn't exist.")
                     return 
             edit = await edit.edit('Processing...')
