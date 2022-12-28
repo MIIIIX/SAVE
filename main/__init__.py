@@ -22,9 +22,6 @@ UPSTREAM_REPO = config("UPSTREAM_REPO", default=None)
 #heroku restart
 APP_NAME = config("APP_NAME", None)
 API_KEY = config("API_KEY", None)
-try:
-    HU_APP = from_key(API_KEY).apps()[APP_NAME]
-except:
-    pass
+HU_APP = from_key(API_KEY).apps()[APP_NAME]
 #end heroku 
 bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN) 
