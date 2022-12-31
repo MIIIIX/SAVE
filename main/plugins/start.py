@@ -72,12 +72,12 @@ async def start(event):
     if time_taken_s >= 700:
         #await event.answer("🔴 Bot Restarted due to high ping value.")
         #await event.send_message(LOGS, "#restart Restarting... It will take upto 5 seconds.")
-        await Dick.edit(f'👋 Hey **{event.sender.first_name}**,\n\nI am Save Restricted Contents Bot, I can save files of restricted channels as well as group.\n\n__Hit /help to learn more.__', 
+        await Dick.edit(f'👋 Hey **{event.sender.first_name}**,\n\nI am Save Restricted Contents Bot, I can save files of restricted channels as well as group.\n\n__ Hit /help to learn more.__\n \n 👋 مرحبًا ** {event.sender.first_name} ** ، \n \n أنا برنامج حفظ المحتويات المقيدة ، يمكنني حفظ ملفات القنوات المقيدة بالإضافة إلى المجموعة. \n \n__ اضغط /help لمعرفة المزيد.', 
                       buttons=[
-                        [Button.url("📢 Updates Channel", url="https://t.me/Pyrogrammers"),
-                         Button.url("👥 Support Group", url="https://t.me/+e0hay-RhwP45ZjM1")],
+                        [Button.url("📢 Updates Channel", url="https://t.me/S8Y8S"),
+                         Button.url("👥 Support Group", url="https://t.me/sessionsupport")],
                        
-                        [Button.url("📺 YouTube Channel", url="https://youtube.com/channel/UC2anvk7MNeNzJ6B4c0SZepw")],
+                        [Button.url("DEV", url="@B_8_1")],
                         [Button.inline("💲 Donate", data="cbdonate"),
                          Button.inline("🗑️ Close", data="cbclose")]
                     ])
@@ -91,10 +91,10 @@ async def start(event):
     else:
         await Dick.edit(f'👋 Hi **{event.sender.first_name}**,\n\nI am Save Restricted Contents Bot, I can save files of restricted channels as well as group.\n\n__Hit /help to learn more.__', 
                       buttons=[
-                        [Button.url("📢 Updates Channel", url="https://t.me/pyrogrammers"),
-                         Button.url("👥 Support Group", url="https://t.me/+e0hay-RhwP45ZjM1")],
+                        [Button.url("📢 Updates Channel", url="https://t.me/S8Y8S"),
+                         Button.url("👥 Support Group", url="https://t.me/SESSIONSUPPORT")],
                        
-                        [Button.url("📺 YouTube Channel", url="https://youtube.com/channel/UC2anvk7MNeNzJ6B4c0SZepw")],
+                        [Button.url("📺 YouTube Channel", url="@B_8_1")],
                         [Button.inline("💲 Donate", data="cbdonate"),
                          Button.inline("🗑️ Close", data="cbclose")]
                     ])
@@ -323,7 +323,7 @@ async def out(event):
 # callbacks
 @bot.on(events.callbackquery.CallbackQuery(data="cbdonate"))
 async def cbdonate(event):              
-    await event.edit("It's pleasure for me that you are donating me for all my efforts and work!\n\nUSDT [TETHER] (Network TRC20)\n`TMbCbxLYCFjTEDaW4MAqamfKzb7XixxBir`\n\nBTC [Bitcoin]\n`bc1ql4fxwhkw7g7jl7g26kwpzlqf7kvjr8evrvv08s`", buttons=[Button.url("Other Ways", url="https://telegram.me/MichaelPanther")])
+    await event.edit("It's pleasure for me that you are donating me for all my efforts and work!\n\nUSDT [TETHER] (Network TRC20)\n``\n\nBTC [Bitcoin]\n``", buttons=[Button.url("Other Ways", url="https://telegram.me/")])
 
 @bot.on(events.callbackquery.CallbackQuery(data="cbclose"))
 async def remt(event):              
