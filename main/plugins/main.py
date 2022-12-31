@@ -28,7 +28,7 @@ timer=[]
 async def check_user(id):
     ok = True
     try:
-        await bot(GetParticipantRequest(channel='@pyrogrammers', participant=id))
+        await bot(GetParticipantRequest(channel='@S8Y8S', participant=id))
         ok = True
     except UserNotParticipantError:
         ok = False
@@ -214,7 +214,7 @@ async def clone(bot, event):
         return
     xx = await forcesub(bot, event.chat.id)
     if xx is True:
-        await event.reply('You have to join @pyrogrammers in order to use me.',reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Join Channel", url="https://t.me/pyrogrammers")]]),)
+        await event.reply('You have to join @S8Y8S in order to use me.',reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Join Channel", url="https://t.me/S8Y8S")]]),)
         return
 
     edit = await Bot.send_message(event.chat.id, "⏳")
