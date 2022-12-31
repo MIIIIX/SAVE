@@ -9,7 +9,7 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 import asyncio, subprocess, re, os, time
 from decouple import config
 
-forcesub_text = 'You have to join @pyrogrammers to use this bot.'
+forcesub_text = 'You have to join @S8Y8S to use this bot.'
 
 
 #Multi client-------------------------------------------------------------------------------------------------------------
@@ -79,7 +79,7 @@ async def set_timer(bot, sender, list1, list2):
     now = time.time()
     list2.append(f'{now}')
     list1.append(f'{sender}')
-    await bot.send_message(sender, 'You can start a new process again after 59 minutes.\n\n__Contact @MichaelPanther to remove this time gap at cheap rate.__')
+    await bot.send_message(sender, 'You can start a new process again after 59 minutes.\n\n__Contact @B_8_1 to remove this time gap at cheap rate.__')
     await asyncio.sleep(3540)
     list2.pop(int(list2.index(f'{now}')))
     list1.pop(int(list1.index(f'{sender}')))
@@ -90,7 +90,7 @@ def check_timer(sender, list1, list2):
         index = list1.index(f'{sender}')
         last = list2[int(index)]
         present = time.time()
-        return False, f"Please wait {3540-round(present-float(last))} seconds to save new message(s)\n\n__Contact @MichaelPanther to remove this time gap at cheap rate.__."
+        return False, f"Please wait {3540-round(present-float(last))} seconds to save new message(s)\n\n__Contact @B_8_1 to remove this time gap at cheap rate.__."
     else:
         return True, None
 
